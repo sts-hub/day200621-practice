@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double a, b, c, d, e, f;
+    while (~scanf("%lf %lf %lf %lf %lf %lf", &a, &b, &c, &d, &e, &f))
+    {
+        double s;
+        s = (a * d + b * e + c * f - a * f - b * c - d * e) / 2;
+        s=fabs(s);
+        printf("%.2f\n", s);
+    }
+    return 0;
+}
