@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<string.h>
+#define N 100
+int main() {
+	int i,j,k,l;
+	char s[N];
+	char s1[N];
+	char s2[N];
+	char s3[N];
+	for (i = 0;i < 100;i++) {
+		s[i] = '\0';
+		s1[i] = '\0';
+		s2[i] = '\0';
+		s3[i] = '\0';
+	}
+	scanf("%[^\n]", s);
+	int n;
+	n = strlen(s);
+	i = 0;
+	j = 0;
+	k = 0;
+	l = 0;
+	for (;i < n;i++) {
+		if ((s[i] <= 'Z' && s[i] >= 'A') || (s[i] <= 'z' && s[i] >= 'a')) {
+			s1[j] = s[i];
+			j++;
+		}
+		else if (s[i] <= '9' && s[i] >= '0') {
+			s2[k] = s[i];
+			k++;
+		}
+		else {
+			s3[l] = s[i];
+			l++;
+		}
+	}
+	printf("%s\n%s\n%s\n", s1,s2,s3);
+	return 0;
+}
