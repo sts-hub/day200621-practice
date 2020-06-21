@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+	int N;
+	scanf("%d", &N);
+	getchar();
+
+	char s1[30];
+	char s2[30];
+	/*char s[] = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' }*/;
+	int i, j, k,n;
+	int m[100];
+
+	for (n = 0;n < N;n++) {
+		int number1[] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+		int number2[] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+		m[n] = 0;
+		scanf("%s%s", s1, s2);
+		getchar();
+		k = strlen(s1);
+		for (i = 0;i < k;i++) {
+			j = (int)(s1[i] - 'a');
+			number1[j]++;
+			j = (int)(s2[i] - 'a');
+			number2[j]++;
+		}
+		for (i = 0;i < 26;i++) {
+			if (number1[i] != number2[i]) {
+				m[n] = 1;
+			}
+		}
+	}
+	
+	for (i = 0; i < N; i++) {
+		if (m[i] == 0) {
+			printf("Yes\n");
+		}
+		else {
+			printf("No\n");
+		}
+	}
+	return 0;
+}
