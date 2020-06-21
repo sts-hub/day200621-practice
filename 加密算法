@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+#define N 100
+int main() {
+	int i;
+	char s[N];
+	char s1[N];
+	for (i = 0;i < 100;i++) {
+		s1[i] = '\0';
+		s[i] = '\0';
+	}
+	scanf("%[^\n]", s);
+	int n;
+	n = strlen(s);
+	for (i = 0;i < n;i++) {
+		if ((s[i] <= 'W' && s[i] >= 'A') || (s[i] <= 'w' && s[i] >= 'a')) {
+			s1[i] = s[i] + 3;
+		}
+		else if ((s[i] <= 'Z' && s[i] >= 'X') || (s[i] <= 'z' && s[i] >= 'x')) {
+			s1[i] = s[i] - 26 + 3;
+		}
+		else {
+			s1[i] = s[i];
+		}
+	}
+	printf("%s", s1);
+	return 0;
+}
